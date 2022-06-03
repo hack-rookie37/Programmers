@@ -3,7 +3,7 @@ from itertools import permutations
 def calculate(ex, n, formula):
     if n == 2: # 수식 3개에 대해서 모두 연산이 끝났을 때 종료
         return str(eval(formula))
-    if ex[n] == '*': # 우선순위의 반대 순서로 식을 쪼개서 재귀
+    if ex[n] == '*': # 우선순위의 순서대로 식을 쪼개어 우선순위가 높은 것 부터 연산을 진행, 이후 그 결과 값으로 우선순위 순서대로 연산함
         result = eval('*'.join([calculate(ex, n + 1, f) for f in formula.split('*')]))
     if ex[n] == '+':
         result = eval('+'.join([calculate(ex, n + 1, f) for f in formula.split('+')]))
