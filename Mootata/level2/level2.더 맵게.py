@@ -8,7 +8,7 @@ def solution(scoville, K):
         temp1 = heappop(scoville)
         temp2 = heappop(scoville)
         heappush(scoville, temp1 + (temp2 * 2))
-    if not scoville or scoville[0] < K:
+    if not scoville or scoville[0] < K: # heap이 비어있거나, 남은 값이 K보다 작다면 실패
         return -1
     else:
         return answer
