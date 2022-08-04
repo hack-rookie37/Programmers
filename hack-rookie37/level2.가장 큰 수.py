@@ -23,3 +23,9 @@ def solution(numbers, x=0):
     if x == 0 and int(answer) == 0:
         return "0"
     return answer
+
+
+def e_solution(numbers):
+    numbers = list(map(str, numbers))
+    numbers.sort(key=lambda x: x * 3, reverse=True)
+    return str(int("".join(numbers)))
