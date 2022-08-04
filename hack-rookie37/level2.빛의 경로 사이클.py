@@ -24,20 +24,14 @@ def solution(grid):
     for r in range(row):
         for c in range(col):
             for k in range(4):
-                if matrix[r][c][k] != 0:
+                count = 0
+                if matrix[r][c][k]:
                     continue
-                matrix[r][c][k] = 1
-                nx, ny = check(r + dx[k], c + dy[k], row, col)
-                count, d = 1, k
-
-                while True:
-                    x, y, d = nx, ny, direction[grid[nx][ny]][d]
-                    nx, ny = check(nx + dx[d], ny + dy[d], row, col)
-                    if matrix[x][y][d] != 0:
-                        break
-                    matrix[x][y][d] = 1
+                while matrix[r][c][k] == 0:
+                    matrix[r][c][k] = 1
+                    r, c = check(r + dx[k], c + dy[k], row, col)
+                    k = direction[grid[r][c]][k]
                     count += 1
-
                 answer.append(count)
 
     return sorted(answer)
