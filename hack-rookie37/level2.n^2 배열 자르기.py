@@ -1,7 +1,7 @@
 def solution(n, left, right):
 
-    L = tuple(map(lambda x: x+1, divmod(left, n)))
-    R = tuple(map(lambda x: x+1, divmod(right, n)))
+    L = tuple(map(lambda x: x + 1, divmod(left, n)))
+    R = tuple(map(lambda x: x + 1, divmod(right, n)))
 
     if L[0] == R[0]:
         return [i if i > L[0] else L[0] for i in range(L[1], R[1] + 1)]
@@ -17,5 +17,6 @@ def solution(n, left, right):
             L_side += [j if j > i else i]
 
     return L_side + R_side
+
 
 solution(3, 2, 5)
