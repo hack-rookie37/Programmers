@@ -15,10 +15,6 @@ def solution(prices):
     for i, a in enumerate(answer):
         if a == 0:
             answer[i] = L-i-1
-        
-    for i, a in enumerate(answer):
-        if a == 0:
-            answer[i] = L-i-1
 
     # list comprehension
     # answer = [L-i-1 if a == 0 else a for i, a in enumerate(answer)]
