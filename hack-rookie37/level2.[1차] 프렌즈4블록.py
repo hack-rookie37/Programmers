@@ -2,6 +2,7 @@ def solution(m, n, board):
     dxy = [(1, 0), (1, 1), (0, 1)]
     board = list(map(list, board))
 
+
     def explore(board, x, y):
         start = board[x][y]
         if start == "x":
@@ -17,8 +18,8 @@ def solution(m, n, board):
 
         return True, None
 
-    def move(board):
 
+    def move(board):
         new_board = [
             [board[x][y] for x in range(m) if board[x][y] != "x"] for y in range(n)
         ]
@@ -28,12 +29,8 @@ def solution(m, n, board):
             if L < m:
                 new_board[y] = ["x"] * (m - L) + new_board[y]
 
-        ret = [
-            [new_board[y][x] for y in range(n)] for x in range(m)
-        ]
+        return [[new_board[y][x] for y in range(n)] for x in range(m)]
 
-
-        return ret
 
     answer = 0
     while True:
