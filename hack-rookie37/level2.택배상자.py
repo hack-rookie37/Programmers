@@ -27,6 +27,3 @@ def solution(order):
             box += 1
 
     return answer
-
-
-print(solution([4, 3, 1, 2, 5]))
