@@ -13,5 +13,3 @@ def solution(n):
     hanoi(n, 1, 3, 2)
 
     return answer
-
-solution(3)
